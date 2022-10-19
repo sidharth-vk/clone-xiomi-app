@@ -1,0 +1,40 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="/"><img src="https://cdn.freebiesupply.com/logos/large/2x/mi-logo-png-transparent.png" height="30" alt="Logo" loading="lazy" style="margin-top: -1px;" /></a>
+
+    <!-- Toggle button -->
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'productList' %} ">Xiaomi Phones</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+      {% if request.user.is_authenticated %}
+      <div class="d-flex align-items-center">
+        {% if item_count > 0 %}
+        <a href=" {% url 'cart:cart_details' %} "><i class="fa fa-shopping-cart" ></i>({{item_count}})</a>
+        {% endif %}
+        <button type="" class="btn btn-link px-3 me-2"><a href=" {% url 'myaccount' %} ">{{user.username}}</a></button>
+        <a href=" {% url 'logout' %} "><button type="button" class="btn btn-primary me-3">Logout</button></a>
+      </div>
+      {% else %}
+      <div class="d-flex align-items-center">
+        
+        <a href=" {% url 'login' %}"><button type="button" class="btn btn-link px-3 me-2">Login</button></a>
+        <a href=" {% url 'register' %}"><button type="button" class="btn btn-primary me-3">Sign up for free</button></a>
+      </div>
+      {% endif %}
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

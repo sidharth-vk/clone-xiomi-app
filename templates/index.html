@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block title %}
+  Xioami India
+{% endblock %}
+{% block content %}
+  <!-- Carousel wrapper -->
+  <div id="carouselMaterialStyle" class="carousel slide carousel-fade" data-mdb-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Inner -->
+    <div class="carousel-inner rounded-5 shadow-4-strong">
+      <!-- Single item -->
+      <div class="carousel-item active">
+        <a href=""><img src="https://i02.appmifile.com/346_operator_in/11/10/2022/4138b586572710296eeafe237b2cdedf.jpg" class="d-block w-100 h-60" alt="Sunset Over the City" /></a>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <a href=""><img src="https://i02.appmifile.com/548_operator_in/12/10/2022/8d6470b99e90160dc9295a9d5c107b95.jpg" class="d-block w-100 h-60" alt="Canyon at Nigh" /></a>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+
+      <!-- Single item -->
+      <div class="carousel-item">
+        <a href="#"><img src="https://i02.appmifile.com/333_operator_in/11/10/2022/27bf9720ece24d42cd42a38fb9f89804.png" class="d-block w-100 h-60" alt="Cliff Above a Stormy Sea" /></a>
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Inner -->
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Carousel wrapper -->
+  <div class="container pt-5 pb-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col h-50">
+        <div class="card h-100 bg-image hover-overlay ripple h-50">
+          <img src="https://i02.appmifile.com/388_operator_in/11/10/2022/ccc7593b544ead967da84708dbe61adc.jpg?width=398&height=230" class="card-img-top img-fluid" alt="Skyscrapers" />
+          <a href="#!"><div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div></a>
+        </div>
+      </div>
+      <div class="col h-50">
+        <div class="card h-100 bg-image hover-overlay ripple h-50">
+          <img src="https://i02.appmifile.com/33_operator_in/10/10/2022/b4276deca03b861263087ac87b190996.jpg?width=398&height=230" class="card-img-top img-fluid" alt="Los Angeles Skyscrapers" />
+          <a href="#!"><div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div></a>
+        </div>
+      </div>
+      <div class="col h-50">
+        <div class="card h-100 bg-image hover-overlay ripple h-50">
+          <img src="https://i02.appmifile.com/459_operator_in/10/10/2022/9e52dae49291ae7da2c04325043e4e88.jpg?width=398&height=230" class="card-img-top img-fluid" alt="Palm Springs Road" />
+          <a href="#!"><div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div></div>
+  {% include 'productlist.html' %}
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}
+  {{ product.product_name }}
+{% endblock %}
+{% block content %}
+  <div>
+    <div class="collapse sticky-top" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4 container">{{ product.product_name }}</h5>
+        <h6 class="text-muted container">{{ product.product_discription }}</h6>
+        <h6 class="text-muted container">$ {{ product.product_price }}</h6>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+      <div class="container container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+      </div>
+    </nav>
+  </div>
+
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+      <!-- Grid row -->
+      <div class="row wow fadeIn">
+        <!-- Grid column -->
+        <div class="col-md-6 mb-4">
+          <img src="{{ product.product_image.url }}" class="img-fluid" alt="" />
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 mb-4">
+          <!-- Content -->
+          <div class="p-4">
+            <div class="mb-3">
+              <button type="button" class="btn btn-secondary" data-mdb-toggle="tooltip" data-mdb-html="true" title="{{ product.product_name }}">Mi Screen Protect</button>
+              <button type="button" class="btn btn-secondary" data-mdb-toggle="tooltip" data-mdb-html="true" title="{{ product.product_name }}">10-days Replacement Policy</button>
+              <button type="button" class="btn btn-secondary" data-mdb-toggle="tooltip" data-mdb-html="true" title="{{ product.product_name }}">Mi Exchange</button>
+            </div>
+
+            <p class="lead">
+              <span class="text-danger"><strong>${{ product.product_price }}</strong></span>
+              <span class="mr-1"><del>${{ product.product_price_original }}</del></span>
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+            <ul>
+              <li>₹1,000 Discount on Checkout</li>
+              <li>Flat ₹4,000 Instant Discount* with Axis Bank Debit and Credit Cards</li>
+              <li>Up to ₹16,500 off with Mi Exchange</li>
+              <li>Up to ₹3,000 cashback* with ZestMoney</li>
+              <li>0% Interest | Up to 6 Months of NO Cost EMI</li>
+            </ul>
+            <form class="justify-content-center p-4">
+              <!-- Default input -->
+              <button class="btn btn-danger ">Buy now</button> 
+              <a class="text-light btn btn-primary btn-md my-0 " style="text-decoration: none;" href="{% if user.is_authenticated %}{% url 'cart:add_cart' product.id %}{% else %}{% url 'login' %}{% endif %}">
+                Add to cart<i class="fas fa-shopping-cart ml-1"></i></a>
+              
+            </form>
+          </div>
+          <!-- Content -->
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+
+      <hr />
+
+      <!-- Grid row -->
+      <div class="row d-flex justify-content-center wow fadeIn">
+        <!-- Grid column -->
+        <div class="col-md-6 text-center">
+          <h4 class="my-4 h4">Additional information</h4>
+
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates, quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+
+      <!-- Grid row -->
+      <div class="row wow fadeIn">
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-12 mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="" />
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="" />
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="" />
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </main>
+{% endblock %}
